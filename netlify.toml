@@ -1,3 +1,0 @@
-[context.twitch-auth-proxy]
-  command = "true"
-  publish = "."
