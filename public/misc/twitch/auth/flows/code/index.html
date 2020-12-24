@@ -15,7 +15,7 @@
     if (!code || !state || !encodedState.origin) {
       window.location.replace('https://yakui.tk')
     } else {
-      window.location.replace(`${encodedState.original}/twitch/auth/callback?code=${code}&state=${state}`)
+      window.location.replace(`${encodedState.origin}/twitch/auth/callback?code=${code}&state=${state}`)
     }
 
   </script>
