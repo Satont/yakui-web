@@ -12,7 +12,7 @@
     const state = query.get('state')
     const encodedState = JSON.parse(window.atob(state))
 
-    if (!code || !state || !encodedState.original) {
+    if (!code || !state || !encodedState.origin) {
       window.location.replace('https://yakui.tk')
     } else {
       window.location.replace(`${encodedState.original}/twitch/auth/callback?code=${code}&state=${state}`)
