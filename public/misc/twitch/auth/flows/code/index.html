@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yakui twitch auth proxy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <script>
+    const query = new URLSearchParams(window.location.search.slice(1))
+    const code = query.get('code')
+    const state = query.get('state')
+    const encodedState = JSON.parse(window.atob(state))
+
+    if (!code || !state || !encodedState.original) {
+      window.location.replace('https://yakui.tk')
+    } else {
+      window.location.replace(`${encodedState.original}/twitch/auth/callback?code=${code}&state=${state}`)
+    }
+
+  </script>
+</body>
+</html>
